@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Auto Werks - 3D Printing Animation</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+        }
+
+        .printer-container {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            text-align: center;
+        }
+
+        .printer-arm {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 60px;
+            height: 20px;
+            background-color: gray;
+            transform: translateX(-50%);
+            animation: moveArm 6s linear forwards;
+        }
+
+        .logo-image {
+            position: absolute;
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            animation: printLogo 6s linear forwards;
+        }
+
+        @keyframes printLogo {
+            0% {
+                clip-path: inset(100% 0 0 0); /* Start hidden */
+            }
+            100% {
+                clip-path: inset(0 0 0 0); /* Fully revealed */
+            }
+        }
+
+        @keyframes moveArm {
+            0% {
+                top: 100%;
+            }
+            100% {
+                top: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="printer-container">
+    <div class="printer-arm"></div>
+    <img class="logo-image" src="C:/Users/vhurt/Downloads/Logo1.jpg" alt="3D Auto Werks Logo Being Printed">
+</div>
+
+</body>
+</html>
